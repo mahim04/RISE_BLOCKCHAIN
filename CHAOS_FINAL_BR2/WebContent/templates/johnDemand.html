@@ -1,0 +1,90 @@
+<div class="row alerts-container" data-ng-controller="AlertsCtrl" data-ng-show="alerts.length">
+  <div class="col-xs-12">
+<!--     <uib-alert data-ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert> -->
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6">
+    <rd-widget>
+      <rd-widget-header icon="fa-tasks" title="Demand Tracker for NY DESK (WALLET ID: NY_234)">
+      
+      
+      <div ng-controller="ModalDemoCtrl">
+									    <script type="text/ng-template" id="myModalContentInitiate.html">
+										        <div class="modal-header">
+        										    <h3 class="modal-title">Transfer Funds</h3>
+  											      </div>
+       												 <div class="modal-body">
+          											  Enter Ammount : <input ng-model="amt" type="text"/>
+													<BR>Wallet : <SELECT>
+																<OPTION>JPM_NY_6985</OPTION>
+																</SELECT>
+        											</div>
+        										<div class="modal-footer">
+            								<button class="btn btn-primary" type="button" ng-click="ok(amt)">OK</button>
+           								 <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+      								  </div>
+    							</script>
+									<a href="" ng-click="open('myModalContentInitiate.html')" >Initiate Transfer</a>	
+									</div>
+      
+      
+      </rd-widget-header>
+      <rd-widget-body classes="medium no-padding">
+        <div class="table-responsive">
+         <table ng-controller="demandTbl" class="table">
+						<tbody>
+						<thead>
+							<tr><th>Date</th><th class="text-center">Demand Legal Entity</th><th>Region</th><th>AssetType</th><th>Exchange</th><th>Symbol</th><th>Quantity</th><th>Track</th></tr>
+						</thead>
+							<tr ng-repeat="demand in demands">
+								<td>{{demand.date}}</td>
+								<td>{{demand.firm}}</td>
+								<td>{{demand.region}}</td>
+								<td>{{demand.assetType}}</td>
+								<td>{{demand.exchange}}</td>
+								<td>{{demand.symbol}}</td>
+								<td>{{demand.quantity}}</td>
+								<td>
+									<div ng-controller="ModalDemoCtrl">
+									    <script type="text/ng-template" id="myModalContent.html">
+										        <div class="modal-header">
+        										    <h3 class="modal-title">APPL TRACKING WINDOW</h3>
+  											      </div>
+       												 <div class="modal-body">
+          											  <img src="img/TRAC.png"/>
+        											</div>
+        										<div class="modal-footer">
+            								<button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+           								 <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+      								  </div>
+    							</script>
+									<a href="" ng-click="open('myModalContent.html')" >{{demand.track}}</a>
+									
+<!-- 									    <button type="button" class="btn btn-default" ng-click="open()">Open me!</button> -->
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+        </div>      
+      </rd-widget-body>
+      <rd-widget-footer>
+        <ul class="pagination pagination-sm pull-right">
+          <li><a href="#">&laquo;</a></li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">&raquo;</a></li>
+        </ul>
+        <div class="clearfix"></div>
+      </rd-widget-footer>
+    </rd-widget>
+  </div>
+</div>
+
+
+

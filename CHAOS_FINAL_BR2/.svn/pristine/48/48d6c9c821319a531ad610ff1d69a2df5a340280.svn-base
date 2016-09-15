@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-lg-6">
+    <rd-widget>
+      <rd-widget-header icon="fa-tasks" title="Demand Tracker for NY DESK (WALLET ID: NY_234)">
+<!--         <a href="#">Initiate Transfer</a> -->
+      </rd-widget-header>
+      <rd-widget-body classes="medium no-padding">
+        <div class="table-responsive">
+			<table ng-controller="transTbl" class="table">
+						<tbody>
+						<thead>
+							<tr><th>Date</th><th class="text-center">Company Name</th><th>Symbol</th><th>AssetType</th><th>Exchange</th><th>Buy/Sell</th><th>Quantity</th><th>Price</th><th>Track</th></tr>
+						</thead>
+							<tr ng-repeat="tran in transactions">
+								<td nowrap="nowrap">{{tran.date}}</td>
+								<td>{{tran.firm}}</td>
+								<td>{{tran.symbol}}</td>
+								<td>{{tran.assetType}}</td>
+								<td>{{tran.exchange}}</td>
+								<td>{{tran.bsInd}}</td>
+								<td>{{tran.quantity}}</td>
+								<td>{{tran.price}}</td>
+								<td><a href="#">{{tran.track}}</a></td>
+							</tr>
+						</tbody>
+					</table>
+        </div>      
+      </rd-widget-body>
+      <rd-widget-footer>
+        <ul class="pagination pagination-sm pull-right">
+          <li><a href="#">&laquo;</a></li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">&raquo;</a></li>
+        </ul>
+        <div class="clearfix"></div>
+      </rd-widget-footer>
+    </rd-widget>
+  </div>
+</div>

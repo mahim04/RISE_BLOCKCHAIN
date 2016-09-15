@@ -1,0 +1,83 @@
+<div class="row alerts-container" data-ng-controller="AlertsCtrl" data-ng-show="alerts.length">
+  <div class="col-xs-12">
+<!--     <uib-alert data-ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert> -->
+  </div>
+</div>
+
+<div class="row">
+	<div class="col-lg-3 col-md-6 col-xs-12">
+		<rd-widget>
+			<rd-widget-body>
+				<div class="widget-icon green pull-left">
+					<i class="fa fa-users"></i>
+				</div>
+				<div class="title" ng-controller="cashBalance">{{cash}}</div>
+				<div class="comment">CASH</div>
+			</rd-widget-body>
+		</rd-widget>
+	</div>
+	<div class="col-lg-3 col-md-6 col-xs-12">
+		<rd-widget>
+			<rd-widget-body>
+				<div class="widget-icon red pull-left">
+					<i class="fa fa-tasks"></i>
+				</div>
+				<div class="title">$15000</div>
+				<div class="comment">ASSETS</div>
+			</rd-widget-body>
+		</rd-widget>
+	</div>
+	<div class="col-lg-3 col-md-6 col-xs-12">
+		<rd-widget>
+			<rd-widget-body>
+				<div class="widget-icon orange pull-left">
+					<i class="fa fa-sitemap"></i>
+				</div>
+				<div class="title">JPM NY</div>
+				<div class="comment">WALLET ID: JPM_NY_6985</div>
+			</rd-widget-body>
+		</rd-widget>
+	</div>
+	<div class="col-lg-3 col-md-6 col-xs-12">
+		<rd-widget>
+			<rd-widget-body>
+				<div class="widget-icon blue pull-left">
+					<i class="fa fa-support"></i>
+				</div>
+				<div class="title">40</div>
+				<div class="comment">DEMAND</div>
+			</rd-widget-body>
+		</rd-widget>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-6">
+		<rd-widget>
+      		<rd-widget-header icon="fa-tasks" title="Positions">
+<!-- 				<a href="#">Manage</a> -->
+      		</rd-widget-header>
+      		<rd-widget-body classes="medium no-padding">
+				<div class="table-responsive">
+					<table ng-controller="posititionTbl" class="table">
+						<tbody>
+						<thead>
+							<tr><th class="text-center">Company Name</th><th>Symbol</th><th>AssetType</th><th>Exchange</th><th>Quantity</th><th>Price</th></tr>
+						</thead>
+							<tr ng-repeat="position in positions">
+								<td>{{position.company}}</td>
+								<td>{{position.symbol}}</td>
+								<td>{{position.assetType}}</td>
+								<td>{{position.exchange}}</td>
+								<td>{{position.quantity}}</td>
+								<td>{{position.price}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</rd-widget-body>
+		</rd-widget>
+	</div>
+</div>
+
+</div>
